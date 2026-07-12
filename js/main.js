@@ -78,48 +78,34 @@
     });
   }
 
-  /* ---- Contact form → FormSubmit (delivers to shauna@refynity.co) ---- */
+  /* ---- Contact form ----
+     The form does a normal POST to FormSubmit (reliable, passes Cloudflare),
+     which delivers the message and redirects back here with ?sent=1.
+     On that return we show the confirmation and give the Send button a
+     brief "Sending…" state on submit. ---- */
   var form = document.querySelector("[data-contact-form]");
   if (form) {
-    var ENDPOINT = "https://formsubmit.co/ajax/shauna@refynity.co";
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var status = form.querySelector(".form__status");
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      var btn = form.querySelector("button[type='submit']");
-      var btnHTML = btn ? btn.innerHTML : "";
-      var firstName = (((form.querySelector("[name='name']") || {}).value) || "").trim().split(" ")[0];
-      if (status) { status.className = "form__status"; status.textContent = ""; }
-      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+    var status = form.querySelector(".form__status");
 
-      fetch(ENDPOINT, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: new FormData(form)
-      })
-        .then(function (r) { if (!r.ok) throw new Error("Request failed"); return r.json(); })
-        .then(function () {
-          if (status) {
-            status.textContent =
-              (firstName ? "Thanks, " + firstName + " — " : "Thanks — ") +
-              "your message is on its way to Refynity. We'll be in touch within 1–2 business days.";
-            status.classList.add("is-success");
-          }
-          form.reset();
-        })
-        .catch(function () {
-          if (status) {
-            status.textContent =
-              "Something went wrong sending your message. Please email shauna@refynity.co directly and we'll get right back to you.";
-            status.classList.add("is-error");
-          }
-        })
-        .finally(function () {
-          if (btn) { btn.disabled = false; btn.innerHTML = btnHTML; }
-        });
+    // Show confirmation after FormSubmit redirects back to ?sent=1
+    var params = new URLSearchParams(window.location.search);
+    if (params.get("sent") === "1" && status) {
+      status.textContent =
+        "Thanks — your message is on its way to Refynity. We'll be in touch within 1–2 business days.";
+      status.classList.add("is-success");
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({}, "", window.location.pathname);
+      }
+      status.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    // Brief loading state on submit (native validation runs first)
+    form.addEventListener("submit", function () {
+      var btn = form.querySelector("button[type='submit']");
+      if (btn && form.checkValidity()) {
+        btn.disabled = true;
+        btn.textContent = "Sending…";
+      }
     });
   }
 
