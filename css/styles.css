@@ -193,7 +193,8 @@ strong { color: var(--fg); font-weight: 700; }
 .nav__link:hover { color: var(--burgundy); }
 .nav__link:hover::after, .nav__link.is-active::after { transform: scaleX(1); }
 .nav__link.is-active { color: var(--burgundy); }
-.nav__cta { display: flex; align-items: center; gap: 1.4rem; }
+.nav__cta { display: flex; align-items: center; gap: 1.4rem; margin-top: 0.6rem; }
+.nav__cta .btn { padding: 0.68em 1.5em; }
 .nav__toggle { display: none; width: 44px; height: 44px; border: none; background: none; cursor: pointer; flex-direction: column; justify-content: center; gap: 5px; }
 .nav__toggle span { display: block; height: 2px; width: 24px; background: var(--ink); transition: transform 0.35s var(--ease), opacity 0.3s var(--ease); }
 .nav.is-open .nav__toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
