@@ -50,15 +50,12 @@ Point your `refynity.co` domain at whichever host you choose.
 
 ## ⚠️ Before you launch — swap these placeholders
 
-1. **Founder photo.** The hero (`index.html`) and About page use a stock portrait as a stand‑in. Search for `PLACEHOLDER` in the HTML and replace the `src` with Shauna's professional headshot. (Ideal: a vertical/portrait shot, ~900×1125px.)
+1. **Founder photo.** ✅ Done — Shauna's photo (`assets/img/shauna.jpg`) is now in the hero and About page. To swap it later, just replace that file (a vertical/portrait crop looks best).
 2. **Section imagery.** All photos are free **Unsplash** images loaded from their CDN (`images.unsplash.com/...`). They're licensed for use, but replace them with your own brand photography when you have it — just change the `src` URLs (or drop files into `assets/img/` and point to them for a fully self‑contained site).
 3. **Fonts.** The brand fonts are **The Seasons** (display) and **HK Grotesk** (body), which are paid/licensed. The site currently uses close free stand‑ins from Google Fonts — **Cormorant Garamond** and **Manrope**. If you have web licenses for the real fonts, self‑host them and update the `<link>` + the `--display` / `--body` variables in `css/styles.css`.
-4. **Email address.** `hello@refynity.co` is used as a placeholder in the footer and contact page. Update it to your real inbox.
+4. **Email address.** ✅ Done — `shauna@refynity.co` is used in the footer, contact page, and contact form.
 5. **Statistics.** The retention/ROI figures cite widely reported Gallup research. **Verify the current published numbers** before going live (each has a visible "please confirm" note in the source).
-6. **Contact form.** It validates and shows a confirmation, but **isn't connected to a mailbox yet.** To make it send:
-   - **Formspree (easiest):** create a form, then set `<form ... action="https://formspree.io/f/XXXX" method="POST">` and remove the `e.preventDefault()` path in `js/main.js`, **or**
-   - **Netlify Forms:** add `netlify` to the `<form>` tag if hosting on Netlify, **or**
-   - wire it to your own endpoint / email service.
+6. **Contact form.** ✅ Wired to **FormSubmit** (free, no account) → delivers to `shauna@refynity.co`. **One-time setup:** the first submission triggers a "Confirm your email" message from FormSubmit to Shauna's inbox — she clicks **Activate** once, and from then on every inquiry is delivered. To switch providers later (e.g. Formspree or a custom backend), change the endpoint in `js/main.js` and the `action` on the form in `contact.html`.
 7. **Member sign‑in.** This is intentionally a stub (a "coming soon" modal), per the brief — no members yet. The real portal is a separate backend build we can scope when you're ready.
 
 ## Brand tokens (quick reference)

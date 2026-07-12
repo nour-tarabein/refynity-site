@@ -78,9 +78,10 @@
     });
   }
 
-  /* ---- Contact form (front-end only; no backend wired yet) ---- */
+  /* ---- Contact form → FormSubmit (delivers to shauna@refynity.co) ---- */
   var form = document.querySelector("[data-contact-form]");
   if (form) {
+    var ENDPOINT = "https://formsubmit.co/ajax/shauna@refynity.co";
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var status = form.querySelector(".form__status");
@@ -88,14 +89,37 @@
         form.reportValidity();
         return;
       }
-      var name = (form.querySelector("[name='name']") || {}).value || "there";
-      if (status) {
-        status.textContent =
-          "Thanks, " + name.split(" ")[0] + " — your note is ready to send. " +
-          "(This form isn't connected to a mailbox yet; hook it up to Formspree or email before launch.)";
-        status.classList.add("is-success");
-      }
-      form.reset();
+      var btn = form.querySelector("button[type='submit']");
+      var btnHTML = btn ? btn.innerHTML : "";
+      var firstName = (((form.querySelector("[name='name']") || {}).value) || "").trim().split(" ")[0];
+      if (status) { status.className = "form__status"; status.textContent = ""; }
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+
+      fetch(ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form)
+      })
+        .then(function (r) { if (!r.ok) throw new Error("Request failed"); return r.json(); })
+        .then(function () {
+          if (status) {
+            status.textContent =
+              (firstName ? "Thanks, " + firstName + " — " : "Thanks — ") +
+              "your message is on its way to Refynity. We'll be in touch within 1–2 business days.";
+            status.classList.add("is-success");
+          }
+          form.reset();
+        })
+        .catch(function () {
+          if (status) {
+            status.textContent =
+              "Something went wrong sending your message. Please email shauna@refynity.co directly and we'll get right back to you.";
+            status.classList.add("is-error");
+          }
+        })
+        .finally(function () {
+          if (btn) { btn.disabled = false; btn.innerHTML = btnHTML; }
+        });
     });
   }
 
