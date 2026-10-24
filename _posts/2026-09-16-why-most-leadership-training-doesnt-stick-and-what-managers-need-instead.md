@@ -153,7 +153,3 @@ And ultimately, that is what creates stronger managers, stronger teams, and orga
 2. What leadership behaviors keep repeating despite the training you’ve already provided? Consider what those patterns may be telling you about the support your managers actually need.
 
 3. Where have you created consistent space for managers to reflect on how they are leading — not just what they are accomplishing? If that space doesn’t currently exist, what would it look like to build it into the way your organization develops leaders?
-
----
-
-Originally published on [LinkedIn](https://www.linkedin.com/pulse/why-most-leadership-training-doesnt-stick-what-need-shauna-dabiri-far-4z7gc/).
