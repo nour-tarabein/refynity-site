@@ -1,0 +1,24 @@
+title: Refynity
+url: "https://refynity.co"
+baseurl: ""
+timezone: America/New_York
+markdown: kramdown
+permalink: /blog/:title/
+future: false
+strict_front_matter: true
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      published: false
+      author: Refynity
+exclude:
+  - docs
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - tests
+  - scripts

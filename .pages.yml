@@ -1,0 +1,60 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+  extensions: [jpg, jpeg, png, webp, gif]
+  rename: safe
+content:
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    subfolders: false
+    filename: "{year}-{month}-{day}-{primary}.md"
+    exclude: [.gitkeep]
+    view:
+      primary: title
+      fields: [title, published, date, author]
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Article title
+        type: string
+        required: true
+      - name: date
+        label: Publication date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: published
+        label: Publish on the website
+        description: Leave off to save a draft. Turn on only when the article is ready to go live.
+        type: boolean
+        default: false
+      - name: author
+        label: Author
+        type: string
+        default: Refynity
+        required: true
+      - name: description
+        label: Short summary
+        description: Used on the blog listing and in search and sharing previews.
+        type: text
+        required: true
+      - name: image
+        label: Cover image (optional)
+        type: image
+      - name: image_alt
+        label: Cover image description
+        description: Describe the image for readers who cannot see it.
+        type: string
+      - name: body
+        label: Article
+        type: rich-text
+        required: true
+        options:
+          format: markdown
