@@ -1,6 +1,6 @@
 # Refynity — Website (Front End)
 
-A fast, deployable **static site** for Refynity — leadership & management training for growth‑stage companies. No build step, no framework, no backend required. Just HTML, CSS, and a little vanilla JavaScript.
+A fast, deployable **static site** for Refynity — leadership & management training for growth‑stage companies. Static HTML, CSS, and vanilla JavaScript, with a Jekyll blog built by GitHub Pages and a Pages CMS visual editor. No application server is required.
 
 Built to the brand bible and the website layout brief: navy `#2F313F` · burgundy `#5A1826` · sand `#CAC2B5` · sage `#92A297`, with an elegant serif display face and the interlocking‑infinity mark (Reflection · Refinement · Infinity).
 
@@ -13,7 +13,7 @@ Built to the brand bible and the website layout brief: navy `#2F313F` · burgund
 | `index.html` | Home | Hero (wordmark + founder photo), what‑is‑Refynity, 3 scenario cards, 2 services, pitch-deck pain points, early retention stats, methodology + infinity spine, participant testimonials, brand statement, CTA |
 | `about.html` | About | The why, founder credibility, the three pillars, brand values, who we serve |
 | `services.html` | Services | 3‑Day Training Series (with day‑by‑day breakdown), 1:1 Coaching, how we work, ROI stats |
-| `blog.html` | Blog | Article landing page with an empty state ready for approved posts |
+| `blog.html` | Blog | Automatic article listing, empty state, and RSS feed |
 | `contact.html` | Contact | Contact details + working front‑end form, member note |
 
 Shared across all pages: top social bar, sticky nav, member sign‑in stub (modal), footer.
@@ -23,7 +23,9 @@ Shared across all pages: top social bar, sticky nav, member sign‑in stub (moda
 ```
 mark/
 ├── index.html · about.html · services.html · blog.html · contact.html
-├── robots.txt · sitemap.xml
+├── robots.txt · sitemap.xml · feed.xml
+├── _posts/ · _layouts/post.html · _config.yml
+├── .pages.yml · admin/   # visual editor setup and entry point
 ├── docs/                # implementation status and blog publishing guide
 ├── css/styles.css        # the entire design system — single source of truth
 ├── js/main.js            # nav, scroll reveals, form handling, member modal
@@ -37,15 +39,18 @@ mark/
 
 ```bash
 cd mark
-python3 -m http.server 8123
+bundle install
+bundle exec jekyll serve --host 127.0.0.1 --port 8123
 # open http://127.0.0.1:8123
 ```
 
+Use Jekyll rather than a plain HTTP server so article pages and the blog listing render. See [the editor and publishing guide](docs/blog-post-template.md) for the one-time Pages CMS connection and writing workflow. New posts default to drafts; the system ships with no posts.
+
 ## Deploy (pick one — all free)
 
-- **Netlify / Vercel:** drag the `mark/` folder onto the dashboard, or connect the repo. No settings needed.
+- **Netlify / Vercel:** configure a Jekyll build (`bundle exec jekyll build`) and publish `_site/`.
 - **GitHub Pages:** push to a repo → Settings → Pages → deploy from branch root.
-- **Cloudflare Pages / any static host:** upload the folder as‑is.
+- **Other static hosts:** run `bundle exec jekyll build` and upload `_site/`.
 
 Point your `refynity.co` domain at whichever host you choose.
 
@@ -85,4 +90,4 @@ Responsive down to mobile (tested at 375px), keyboard‑focusable with visible f
 
 ## Website suggestions update
 
-See [implementation status and remaining inputs](docs/website-suggestions.md) for portrait, testimonial permission, Google Business Profile, and analytics requirements. See [blog publishing guide](docs/blog-post-template.md) to add the first approved article.
+See [implementation status and remaining inputs](docs/website-suggestions.md) for portrait, testimonial permission, Google Business Profile, and analytics requirements. See [blog publishing guide](docs/blog-post-template.md) for writing, drafts, images, and publishing.

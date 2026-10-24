@@ -1,8 +1,14 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://refynity.co/</loc></url>
-  <url><loc>https://refynity.co/about.html</loc></url>
-  <url><loc>https://refynity.co/services.html</loc></url>
-  <url><loc>https://refynity.co/blog.html</loc></url>
-  <url><loc>https://refynity.co/contact.html</loc></url>
+  <url><loc>{{ '/' | absolute_url | xml_escape }}</loc></url>
+  <url><loc>{{ '/about.html' | absolute_url | xml_escape }}</loc></url>
+  <url><loc>{{ '/services.html' | absolute_url | xml_escape }}</loc></url>
+  <url><loc>{{ '/blog.html' | absolute_url | xml_escape }}</loc></url>
+  <url><loc>{{ '/contact.html' | absolute_url | xml_escape }}</loc></url>
+  {% for post in site.posts %}
+  <url><loc>{{ post.url | absolute_url | xml_escape }}</loc><lastmod>{{ post.date | date_to_xmlschema }}</lastmod></url>
+  {% endfor %}
 </urlset>
