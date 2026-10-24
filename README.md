@@ -10,7 +10,7 @@ Built to the brand bible and the website layout brief: navy `#2F313F` · burgund
 
 | File | Page | Highlights |
 |---|---|---|
-| `index.html` | Home | Hero (wordmark + founder photo), what‑is‑Refynity, 3 scenario cards, 2 services, pitch-deck pain points, early retention stats, methodology + infinity spine, participant testimonials, brand statement, CTA |
+| `index.html` | Home | Hero (wordmark + founder photo), what‑is‑Refynity, 3 scenario cards, 2 services, pitch-deck pain points, early retention stats, methodology + infinity spine, brand statement, CTA |
 | `about.html` | About | The why, founder credibility, the three pillars, brand values, who we serve |
 | `services.html` | Services | 3‑Day Training Series (with day‑by‑day breakdown), 1:1 Coaching, how we work, ROI stats |
 | `blog.html` | Blog | Automatic article listing, empty state, and RSS feed |

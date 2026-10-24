@@ -4,7 +4,7 @@
 
 - New homepage pain-points section based on pitch deck slide 2, with all six problems.
 - Existing leadership statistics moved above “What is Refynity.” The existing scenario cards remain as examples further down the page.
-- Four complete supplied testimonials, attributed anonymously to “Refynity training participant.” No names, company names, or job titles are included.
+- Four complete supplied testimonials prepared in docs/testimonials.html, attributed anonymously. They are excluded from the live build pending Shauna’s approval. No names, company names, or job titles are included.
 - Responsive Blog page in every page's header and footer. It has an honest empty state, with no fabricated articles, authors, dates, or case studies.
 - Canonical URLs, Open Graph URLs, sitemap.xml, and robots.txt.
 - Corrected the shared mobile navigation's missing aria-controls target.
