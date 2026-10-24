@@ -49,7 +49,6 @@ Dir.mktmpdir('refynity-blog-test-') do |tmp|
   assert(File.read(File.join(destination, 'blog.html')).include?('Our first articles are on the way.'), 'Missing empty state')
   assert(REXML::XPath.match(xml(File.join(destination, 'feed.xml')), '//item').empty?, 'Empty feed contains articles')
   assert(!File.exist?(File.join(destination, 'docs')), 'Internal documentation must not be deployed')
-  assert(!File.read(File.join(destination, 'index.html')).include?('testimonials-title'), 'Unapproved testimonials must stay off the live site')
   assert(!File.exist?(File.join(destination, 'tests')), 'Test source must not be deployed')
   assert(!File.exist?(File.join(destination, '.pages.yml')), 'CMS config must not be copied to the site')
 

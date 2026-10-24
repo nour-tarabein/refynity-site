@@ -343,6 +343,8 @@ strong { color: var(--fg); font-weight: 700; }
 .testimonial blockquote { flex: 1; }
 .testimonial h3 { color: var(--burgundy); margin-bottom: 1.2rem; }
 .testimonial blockquote p { font-size: 1rem; line-height: 1.8; }
+.testimonial blockquote p + p { margin-top: 1.2rem; }
+.testimonial__rating { color: var(--burgundy); letter-spacing: 0.16em; margin-bottom: 1.2rem; }
 .testimonial figcaption { margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--sand-soft); font-size: 0.8rem; font-weight: 600; color: var(--fg-soft); }
 .blog-empty { text-align: center; padding: clamp(2rem, 5vw, 4rem); border: 1px solid var(--sand); border-radius: var(--radius-lg); background: var(--paper-raise); }
 .blog-empty__mark { display: block; font-family: var(--display); font-size: 4rem; line-height: 1; color: var(--sage-deep); margin-bottom: 1.2rem; }

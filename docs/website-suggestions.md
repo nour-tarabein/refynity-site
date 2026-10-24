@@ -4,14 +4,14 @@
 
 - New homepage pain-points section based on pitch deck slide 2, with all six problems.
 - Existing leadership statistics moved above “What is Refynity.” The existing scenario cards remain as examples further down the page.
-- Four complete supplied testimonials prepared in docs/testimonials.html, attributed anonymously. They are excluded from the live build pending Shauna’s approval. No names, company names, or job titles are included.
+- Two training reviews supplied as screenshots are published verbatim on the homepage: Brenda, Training Director; and Delfina, Teacher. Their individual five-star ratings are reproduced from the screenshots. The earlier four PDF versions remain in docs/testimonials.html, excluded from the live build.
 - Responsive Blog page in every page's header and footer. It has an honest empty state, with no fabricated articles, authors, dates, or case studies.
 - Canonical URLs, Open Graph URLs, sitemap.xml, and robots.txt.
 - Corrected the shared mobile navigation's missing aria-controls target.
 
-## Before publishing this branch
+## Testimonial sources
 
-Confirm with Shauna that the testimonials can be published, including anonymously. Names and job titles require separate confirmation. The site currently withholds all identifying attributions. The four testimonials follow the order in the supplied suggestions PDF; keep those private source documents out of this public repository.
+The user supplied two review screenshots after requesting LinkedIn testimonials. Use only the quote text, first names, roles, and individual ratings visible in those screenshots. Do not add surnames or companies from other sources. The remaining PDF testimonials stay excluded pending approval. Keep private source documents out of this public repository.
 
 ## Inputs still needed
 
