@@ -10,9 +10,10 @@ Built to the brand bible and the website layout brief: navy `#2F313F` · burgund
 
 | File | Page | Highlights |
 |---|---|---|
-| `index.html` | Home | Hero (wordmark + founder photo), what‑is‑Refynity, 3 scenario cards, 2 services, methodology + infinity spine, retention stats, brand statement, CTA |
+| `index.html` | Home | Hero (wordmark + founder photo), what‑is‑Refynity, 3 scenario cards, 2 services, pitch-deck pain points, early retention stats, methodology + infinity spine, participant testimonials, brand statement, CTA |
 | `about.html` | About | The why, founder credibility, the three pillars, brand values, who we serve |
 | `services.html` | Services | 3‑Day Training Series (with day‑by‑day breakdown), 1:1 Coaching, how we work, ROI stats |
+| `blog.html` | Blog | Article landing page with an empty state ready for approved posts |
 | `contact.html` | Contact | Contact details + working front‑end form, member note |
 
 Shared across all pages: top social bar, sticky nav, member sign‑in stub (modal), footer.
@@ -21,7 +22,9 @@ Shared across all pages: top social bar, sticky nav, member sign‑in stub (moda
 
 ```
 mark/
-├── index.html · about.html · services.html · contact.html
+├── index.html · about.html · services.html · blog.html · contact.html
+├── robots.txt · sitemap.xml
+├── docs/                # implementation status and blog publishing guide
 ├── css/styles.css        # the entire design system — single source of truth
 ├── js/main.js            # nav, scroll reveals, form handling, member modal
 ├── assets/
@@ -79,3 +82,7 @@ Responsive down to mobile (tested at 375px), keyboard‑focusable with visible f
 ---
 
 *Note: the brand board carried a leftover template tagline ("Discover the Power of Natural Ingredients") that belongs to a different template — it was omitted. The site uses your real taglines from the brand bible: "Enter with curiosity. Commit to evolution. Remove the ceiling." and "Better leaders build stronger teams."*
+
+## Website suggestions update
+
+See [implementation status and remaining inputs](docs/website-suggestions.md) for portrait, testimonial permission, Google Business Profile, and analytics requirements. See [blog publishing guide](docs/blog-post-template.md) to add the first approved article.
