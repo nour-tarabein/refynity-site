@@ -1,6 +1,6 @@
 ---
 title: "5 Signs Your Leadership Approach Hasn’t Kept Up With Your Company’s Growth"
-date: "2026-10-24"
+date: "2026-08-06"
 published: true
 author: "Shauna Dabiri-far"
 description: "Every company eventually reaches a point where yesterday’s leadership approach no longer supports tomorrow’s growth."

@@ -1,6 +1,6 @@
 ---
 title: "Your Best Employee Isn’t Necessarily Your Next Best Manager"
-date: "2026-10-24"
+date: "2026-08-20"
 published: true
 author: "Refynity"
 description: "But being exceptional at the work and being able to lead the people doing the work are two very different skill sets."
